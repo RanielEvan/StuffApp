@@ -1,0 +1,16 @@
+STUFF
+ 
+Dashboard
+	[importante] Hoje tem 4 pessoas para pagar!
+	[header]Você está devendo R$100,00
+	
+	[Lista] de Tarefas para Hoje
+	•
+	•
+	•
+	•         	[MostrarLista]
+	
+	[NovaTarefa]  [NovoTipo]  [Valores]
+				     /\
+	 		   [Add Saldo][Retirar]
+	
