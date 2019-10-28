@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:stuff/views/home/home.dart';
 
 class AppTree extends StatefulWidget {
 
-  @override
+@override
   _AppTreeState createState() => _AppTreeState();
 }
 
@@ -63,9 +62,9 @@ class _AppTreeState extends State<AppTree> {
         controller: controller,
         pageSnapping: true,
         children: [
-          Home(), //Home View
-          Pagina2(),
-          Pagina3(),
+          // Home(), //Home View
+          // Pagina2(),
+          // Pagina3(),
         ],
       ),
 
@@ -78,49 +77,4 @@ class _AppTreeState extends State<AppTree> {
 
 
 
-class Pagina2 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Card(
-        color: Colors.lightBlue,
-        elevation: 4,
-        margin: EdgeInsets.all(24),
-        child: Center(
-          child: Text(
-            "Pagina 2!",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 24
-            ),
-          ),
-        )
-      )
-    );
-  }
-}
-
-class Pagina3 extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: Colors.white,
-      child: Card(
-        color: Colors.lightBlue,
-        elevation: 4,
-        margin: EdgeInsets.all(24),
-        child: Center(
-          child: Text(
-            "Pagina 3 Porra!",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 24
-            ),
-          ),
-        )
-      )
-    );
-  }
-}
   

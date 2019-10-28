@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:stuff/views/home/home.dart';
-import 'app.dart';
+import 'package:stuff/views/dashboard/stuff_dash.dart';
 
 void main() => runApp(StuffApp());
 
@@ -16,14 +15,15 @@ class StuffApp extends StatelessWidget {
       theme: ThemeData(
         // This is the theme of your application.
         primarySwatch: Colors.deepPurple,
+        brightness: Brightness.dark, //DARKTHEME
       ),
       
-      darkTheme: ThemeData(
-        brightness: Brightness.dark,
-      ),
+      // darkTheme: ThemeData(
+      //   brightness: Brightness.dark,
+      // ),
       
       // home: AppTree(),
-      home: Home(),
+      home: Dashboard(),
     );
   }
 }

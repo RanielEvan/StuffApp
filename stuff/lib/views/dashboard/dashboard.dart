@@ -1,15 +1,21 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class Home extends StatefulWidget {
-
-  @override
-  _HomeState createState() => _HomeState();
+class Dashboard extends StatefulWidget {
+    @override
+    _DashboardState createState() => _DashboardState();
 }
 
 
 
-class _HomeState extends State<Home> {
+class _DashboardState extends State<Dashboard> {
   
+  //Variaveis
+  final controller = PageController(
+    initialPage: 0,
+  );
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -72,7 +78,7 @@ class _HomeState extends State<Home> {
               ],
             ),
           ),
-          //== APPBAR ===
+
 
           SizedBox(height: 10.0), //DISTANCIA
 
@@ -83,29 +89,41 @@ class _HomeState extends State<Home> {
             height: MediaQuery.of(context).size.height - 180,
             decoration: BoxDecoration(
               color: Colors.white, //FUNDO
-              borderRadius: BorderRadius.only(topLeft: Radius.circular(35)),
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(20), bottomLeft: Radius.circular(20)),
             ),
 
             //Lista de Itens
-            child: ListView(
-              primary: false,
-              padding: EdgeInsets.only(top: 45.0), //Margem de Cima..
-              children: <Widget>[ //Listagem
-                Padding(
-                  padding: EdgeInsets.only(top: 150.0),
-                  child:Container(
-                    height: MediaQuery.of(context).size.height - 300.0,
-                    child:ListView(
-                      children: <Widget>[
+            child:
+            // ListView(
+            //   primary: false,
+            //   padding: EdgeInsets.only(top: 45.0), //Margem de Cima..
+            //   children: <Widget>[ //Listagem
+            //     Padding(
+            //       padding: EdgeInsets.only(top: 150.0),
+            //       child:Container(
+            //         height: MediaQuery.of(context).size.height - 300.0,
+            //         child:ListView(
+            //           children: <Widget>[
 
-                        //ADD FILHOS
+            //             //ADD FILHOS
 
-                      ],
-                    )
-                  )
-                )
+            //           ],
+            //         )
+            //       )
+            //     )
+            //   ],
+            // ),
+            PageView( //PAGINAS DA VIEW
+              controller: controller,
+              pageSnapping: true,
+              children: [
+                Pagina1(), //Home View
+                Pagina2(),
+                Pagina3(),
               ],
             ),
+
+
           ),
 
           SizedBox(height: 10.0), //DISTANCIA
@@ -113,7 +131,7 @@ class _HomeState extends State<Home> {
           //ACOES DE BAIXO
           Container(
                 alignment: Alignment.bottomCenter,
-                  width: 120.0,
+                  //width: 120.0,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: <Widget>[
@@ -172,77 +190,6 @@ class _HomeState extends State<Home> {
                 ),
 
 
-          // Stack(
-          //   children: <Widget>[
-          //     Align(
-          //       alignment: Alignment.bottomLeft,
-          //       child: Padding(
-          //         padding: EdgeInsets.only(left:24.0),
-
-          //         child: FloatingActionButton.extended(
-          //           heroTag: "direction",
-          //           backgroundColor: Colors.blue,
-          //           onPressed: () => setState(() {
-          //              //LOGICA
-          //           }),
-          //           icon: Icon(
-          //             Icons.add,
-          //             color: Colors.white,
-          //           ),
-          //           label: Text("Tarefa"),
-
-          //         )
-
-          //       ),
-          //     ),
-
-          //     Align(
-          //       alignment: Alignment.bottomCenter,
-          //       child: Padding(
-          //         padding: EdgeInsets.only(left:0.0),
-
-          //         child: FloatingActionButton.extended(
-          //           heroTag: "speed",
-          //           backgroundColor: Colors.green,
-          //           onPressed: () => setState(() {
-          //              //LOGICA
-          //           }),
-          //           icon: Icon(
-          //             Icons.add,
-          //             color: Colors.white,
-          //           ),
-          //           label: Text("Tipo"),
-
-          //         )
-
-          //       ),
-          //     ),
-
-          //     Align(
-          //       alignment: Alignment.bottomRight,
-          //       child: Padding(
-          //         padding: EdgeInsets.only(right:24.0),
-
-          //         child: FloatingActionButton.extended(
-          //           heroTag: "outro",
-          //           backgroundColor: Colors.red,
-          //           onPressed: () => setState(() {
-          //              //LOGICA
-          //           }),
-          //           icon: Icon(
-          //             Icons.attach_money,
-          //             color: Colors.white,
-          //           ),
-          //           label: Text(""),
-
-          //         )
-
-          //       ),
-          //     )
-
-          //   ],
-          // )
-
         ],
         
       )
@@ -253,3 +200,71 @@ class _HomeState extends State<Home> {
 
 
 
+class Pagina1 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      child: Card(
+        color: Colors.lightBlue,
+        elevation: 4,
+        margin: EdgeInsets.all(24),
+        child: Center(
+          child: Text(
+            "Pagina 1!",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24
+            ),
+          ),
+        )
+      )
+    );
+  }
+}
+
+class Pagina2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      child: Card(
+        color: Colors.lightBlue,
+        elevation: 4,
+        margin: EdgeInsets.all(24),
+        child: Center(
+          child: Text(
+            "Pagina 2!",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24
+            ),
+          ),
+        )
+      )
+    );
+  }
+}
+
+class Pagina3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.white,
+      child: Card(
+        color: Colors.lightBlue,
+        elevation: 4,
+        margin: EdgeInsets.all(24),
+        child: Center(
+          child: Text(
+            "Pagina 3 Porra!",
+            style: TextStyle(
+              color: Colors.white,
+              fontSize: 24
+            ),
+          ),
+        )
+      )
+    );
+  }
+}
